@@ -17,7 +17,7 @@ class Bot:
         # type:#(State) -> tuple[int, int]
         """
 		Function that gets called every turn. This is where to implement the strategies.
-		Be sure to make a legal move. Illegal moves, like giving an index of a card you
+	    Be sure to make a legal move. Illegal moves, like giving an index of a card you
 		don't own or proposing an illegal mariage, will lose you the game.
 		TODO: add some more explanation
 		if one or more of the cards in hand is of trump suit then, play a random trump card.

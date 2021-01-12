@@ -77,10 +77,11 @@ class Bot:
                                 chosen_move = move
                             elif move % 5 == 4:
                                 chosen_move = move
+                        return chosen_move
 
                     if opponents_played_card % 5 == 1 or opponents_played_card % 5 == 0:
                         # does this take the opponents played card in account?
-                        if len(moves_trump_suit) != 0:
+                        if len(moves_trump_suit) > 0:
                             for move in moves_trump_suit:
                                 if move % 5 == 4:
                                     chosen_move = move
@@ -112,20 +113,23 @@ class Bot:
                             return random.choice(moves)
         # if we played a card, get played cards
         if state.get_opponents_played_card() is None:
-            if moves_trump_suit != 0:
+            if moves_trump_suit > 0:
                 moves.remove(moves_trump_suit)
                 chosen_move = moves[0]
+                return chosen_move
             else:
                 for move in moves:
                     if move in range(4, 20, 5):
                         chosen_move = move
+                        return chosen_move
                     elif move in range(3, 20, 5):
                         chosen_move = move
+                        return chosen_move
                     elif move in range(2, 20, 5):
                         chosen_move = move
+                        return chosen_move
                     else:
                         return random.choice(moves)
-                    return chosen_move
 
     def get_10(self, moves):
         for move in moves:
