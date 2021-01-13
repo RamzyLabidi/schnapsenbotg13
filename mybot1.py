@@ -8,7 +8,7 @@ from api import State
 from api import Deck
 import random
 
-#TEST
+
 def is_10(moves):
     for i in range(len(moves)):
         if moves[0][0] % 5 == 1:
@@ -22,7 +22,7 @@ def cards_in_suit_of_10(moves):
             count += 1
     return count
 
-#test
+
 def protective_cards(moves, played_cards):
     for i in range(len(played_cards)):
         if played_cards[0][0] % 5 == 0 and Deck.get_suit(i) == is_10(played_cards):
