@@ -36,8 +36,6 @@ def protective_cards(moves, played_cards):
             return True
 
 
-
-
 class Bot:
 
     def __init__(self):
@@ -49,8 +47,6 @@ class Bot:
         # All legal moves
         moves = state.moves()
         chosen_move = moves[0]
-        #ask TA
-        #Deck.get_possible_mariages(state.whose_turn())
         moves_trump_suit = []
         played_cards = []  # Get all trump suit moves available
         for index, move in enumerate(moves):
@@ -104,16 +100,31 @@ class Bot:
                         elif move[0] % 5 == 2:
                             chosen_move = move
                             return chosen_move
-            else:
-                return random.choice(moves)
+                elif state.get_opponents_played_card % 5 == 2 or \
+                        state.get_opponents_played_card % 5 == 3 or \
+                        state.get_opponents_played_card % 5 == 4:
+                    for move in moves:
+                        if move[0] % 5 <= 4:
+                            chosen_move = move
+                            return chosen_move
+
+
+            #else:
+             #   return random.choice(moves)
         """
         if len(moves_trump_suit) > 0:
             chosen_move = moves_trump_suit[0]
             return chosen_move
         """
         if state.get_opponents_played_card() is None:
+            for move in moves:
+                if move[0] is None and move[1] is not None:
+                    chosen_move = move
+                    return chosen_move
+                if move[0] is not None and move[1] is not None:
+                    chosen_move = move
+                    return chosen_move
             non_trump_cards = moves
-
             if len(moves_trump_suit) > 0:
                 i = 0
                 for trump_card in moves_trump_suit:
