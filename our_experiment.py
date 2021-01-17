@@ -24,10 +24,8 @@ RandomBot -- A simple strategy: enumerates all legal moves, and picks one
 uniformly at random.
 """
 
+
 # Import the API objects
-from api import State
-from api import Deck
-import random
 
 
 def is_10(moves):
