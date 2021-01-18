@@ -17,21 +17,21 @@ for line in lines:
 height = wins
 left = bot_names
 # labels for bars
-for bot in bot_names:
-    tick_label = bot_names
+
+tick_label = bot_names
 
 # plotting a bar chart
 plt.bar(left, height, tick_label=tick_label,
         width=0.5, color=['red', 'pink'])
 
 # naming the x-axis
-plt.xlabel('wins')
+plt.xlabel('bots')
 # naming the y-axis
-plt.ylabel('bots')
+plt.ylabel('wins')
 # plot title
 plt.title('My bar chart!')
 
 # function to show the plot
 plt.show()
 
-plt.savefig('our_experiment_bar_chart.pdf')
+plt.savefig('our_experiment_tournament.pdf')
