@@ -100,9 +100,9 @@ class Bot:
                         elif move[0] % 5 == 2:
                             chosen_move = move
                             return chosen_move
-                elif state.get_opponents_played_card % 5 == 2 or \
-                        state.get_opponents_played_card % 5 == 3 or \
-                        state.get_opponents_played_card % 5 == 4:
+                elif  state.get_opponents_played_card() % 5 == 2 or \
+                        state.get_opponents_played_card() % 5 == 3 or \
+                        state.get_opponents_played_card() % 5 == 4:
                     for move in moves:
                         if move[0] % 5 <= 4:
                             chosen_move = move
