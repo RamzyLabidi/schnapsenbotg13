@@ -1,0 +1,3 @@
+<bots.mybot1.mybot1.Bot object at 0x03A5C7D0> 12
+<bots.rdeep.rdeep.Bot object at 0x03A5C750> 31
+<bots.bully.bully.Bot object at 0x03A5C6F0> 10
