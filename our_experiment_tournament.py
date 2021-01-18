@@ -52,7 +52,9 @@ def run_tournament(options):
                                                                           playedgames / float(totalgames) * 100, wins))
 
     print('Results:')
-    for i in range(len(bots)):
+    i = 0
+    f.write("%s %d" % (bots[i], wins[i]))
+    for i in range(1, len(bots)):
         print('    bot {}: {} points'.format(bots[i], wins[i]))
         f.write("\n%s %d" % (bots[i], wins[i]))
 
