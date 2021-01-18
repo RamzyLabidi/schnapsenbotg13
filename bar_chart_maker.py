@@ -34,4 +34,4 @@ plt.title('My bar chart!')
 # function to show the plot
 plt.show()
 
-plt.savefig('our_experiment.pdf')
+plt.savefig('our_experiment_bar_chart.pdf')
