@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 file = open("tournament_results.txt", "r").read()
 lines = file.splitlines()
 total = 0
-p = 1
 our_bot_won_list = lines[0].split(">")
 our_bot_won = int(our_bot_won_list[1])
 print(our_bot_won)
