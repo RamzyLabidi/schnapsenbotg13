@@ -29,7 +29,13 @@ def run_tournament(options):
     playedgames = 0
 
     print('Playing {} games:'.format(int(totalgames)))
+    id_numbers = []
+    for i in range(101):
+        random_number = random.randint(0, 10000)
+        id_numbers.append(random_number)
+    print(id_numbers)
     for a, b in matches:
+        i = 0
         for r in range(options.repeats):
 
             if random.choice([True, False]):
@@ -37,8 +43,10 @@ def run_tournament(options):
             else:
                 p = [b, a]
 
+            id_num = id_numbers[i]
+            i += 1
             # Generate a state with a random seed
-            state = State.generate(id = 666, phase=int(options.phase))
+            state = State.generate(id=id_num, phase=int(options.phase))
 
             winner, score = engine.play(bots[p[0]], bots[p[1]], state, options.max_time * 1000, verbose=options.verbose,
                                         fast=options.fast)
