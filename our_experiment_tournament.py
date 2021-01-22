@@ -38,7 +38,7 @@ def run_tournament(options):
                 p = [b, a]
 
             # Generate a state with a random seed
-            state = State.generate(phase=int(options.phase))
+            state = State.generate(id = 666, phase=int(options.phase))
 
             winner, score = engine.play(bots[p[0]], bots[p[1]], state, options.max_time * 1000, verbose=options.verbose,
                                         fast=options.fast)
